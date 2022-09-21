@@ -6,9 +6,10 @@ export interface InputFieldProps {
     label: string;
     name: string;
     control: any;
+    type?: string
 }
 
-const COITextField = ({label, control, name}: InputFieldProps) => {
+const COITextField = ({label, control, name, type}: InputFieldProps) => {
 
     return (
         <Controller
@@ -20,6 +21,7 @@ const COITextField = ({label, control, name}: InputFieldProps) => {
                     error={!!fieldState.error}
                     helperText={fieldState.error?.message}
                     label={label}
+                    type={type}
                 />
             )}
         />

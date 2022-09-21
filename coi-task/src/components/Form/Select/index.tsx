@@ -21,7 +21,17 @@ const COISelect = ({label, control, name, children}: InputFieldProps) => {
                     error={!!fieldState.error}
                     helperText={fieldState.error?.message}
                     label={label}
-                    select>
+                    select
+                    SelectProps={{
+                        MenuProps: {
+                            PaperProps: {
+                                sx: {
+                                    maxHeight: 400
+                                }
+                            }
+                        }
+                    }}
+                >
                     {children}
                 </TextField>
             )}

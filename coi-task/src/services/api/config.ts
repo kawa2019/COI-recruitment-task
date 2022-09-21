@@ -1,8 +1,9 @@
 import axios, {AxiosInstance} from "axios";
 
 export const getAxiosWithConfig = (): AxiosInstance => {
-    const apiKey = '4dnMwNmar0abLMR0qS7ghBzUcN3rBqMl';
-    const baseUrl = 'https://api.apilayer.com/fixer';
+    //originalKey:4dnMwNmar0abLMR0qS7ghBzUcN3rBqMl
+    const apiKey = '7AIFMLM9MQVzq7F6XnR03kIz60VFL5HN';
+    const baseUrl = 'https://api.apilayer.com';
 
     return axios.create({
         baseURL: baseUrl,

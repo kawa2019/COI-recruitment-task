@@ -1,6 +1,6 @@
 import {styled} from '@mui/material';
 
-export const HomeStyled = styled('div')(({theme}) => ({
+export const HomeStyled = styled('div')(() => ({
     height: '100vh',
     display: 'flex',
     justifyContent: 'center',

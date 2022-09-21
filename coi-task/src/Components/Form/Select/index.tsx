@@ -1,4 +1,3 @@
-import {ReactElement} from "react";
 import {Controller} from "react-hook-form";
 import {TextField} from "@mui/material";
 
@@ -24,7 +23,7 @@ const COISelect = ({label, control, name, children}: InputFieldProps) => {
                     select
                     SelectProps={{
                         MenuProps: {
-                            PaperProps: {
+                            MenuListProps: {
                                 sx: {
                                     maxHeight: 400
                                 }

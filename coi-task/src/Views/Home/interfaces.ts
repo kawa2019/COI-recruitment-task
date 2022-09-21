@@ -1,5 +1,5 @@
 export interface ConvertForm {
-    startCurrency: string,
-    endCurrency: string,
+    fromCurrency: string,
+    toCurrency: string,
     amount: number,
 }

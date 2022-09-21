@@ -1,28 +1,32 @@
 import {createContext, Dispatch, useReducer} from "react";
-import {HistoricalConvertsAction, HistoricalConvertsReducer} from "./HistoricalConvertsReducer";
-import {HistoricalConvertApi} from "../types/HistoricalConvertApi";
+import {
+    CurrencyExchangeHistoryAction,
+    CurrencyExchangeHistoryReducer,
+    CurrencyExchangeHistoryTypes
+} from "./CurrencyExchangeHistoryReducer";
+import {CurrencyExchangeApi} from "../Services/api/interfaces";
 
 export interface InitialState {
-    historicalConverts: { data: HistoricalConvertApi[] }
+    currencyExchangeHistory: { data: CurrencyExchangeApi[] }
 }
 
 export interface AppProviderProps {
     children: JSX.Element;
 }
 
-const localStorageHistoricalConverts = localStorage.getItem('historicalConverts');
-const localStorageHistoricalConvertsObj = localStorageHistoricalConverts && JSON.parse(localStorageHistoricalConverts)
+const localStorageCurrencyExchangeHistory = localStorage.getItem('CurrencyExchangeHistory');
+const localStorageCurrencyExchangeHistoryObj = localStorageCurrencyExchangeHistory && JSON.parse(localStorageCurrencyExchangeHistory)
 
 const initialState: InitialState = {
-    historicalConverts: localStorageHistoricalConvertsObj || {data: []}
+    currencyExchangeHistory: localStorageCurrencyExchangeHistoryObj || {data: []}
 };
-export type AnyStateAction = HistoricalConvertsAction
+export type AnyStateAction = CurrencyExchangeHistoryAction
 
 export const MainReducer = (
-    {historicalConverts}: InitialState,
+    {currencyExchangeHistory}: InitialState,
     action: any,
 ) => ({
-    historicalConverts: HistoricalConvertsReducer(historicalConverts, action)
+    currencyExchangeHistory: CurrencyExchangeHistoryReducer(currencyExchangeHistory, action)
 });
 
 export const AppContext = createContext<{

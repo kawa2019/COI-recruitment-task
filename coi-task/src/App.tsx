@@ -3,7 +3,7 @@ import {Route, BrowserRouter, Routes} from "react-router-dom";
 import Home from "./Views/Home";
 import {QueryClient, QueryClientProvider} from "react-query";
 import {createTheme, CssBaseline, Theme, ThemeProvider} from "@mui/material";
-import HistoricalConverts from "./Views/HistoricalConverts";
+import HistoricalConverts from "./Views/CurrencyExchangeHistory";
 import {AppProvider} from "./Context/Context";
 
 export const coiTaskTheme: Theme = createTheme({})
@@ -11,9 +11,6 @@ export const coiTaskTheme: Theme = createTheme({})
 const queryClient = new QueryClient()
 
 const App: React.FC = () => {
-
-    //TBD home
-    //
 
     return (
         <AppProvider>
@@ -27,7 +24,7 @@ const App: React.FC = () => {
                                 element={<Home/>}
                             />
                             <Route
-                                path={'/historicalConverts'}
+                                path={'/history'}
                                 element={<HistoricalConverts/>}
                             />
                         </Routes>

@@ -1,4 +1,9 @@
-export interface HistoricalConvertApi {
+export interface CurrenciesApi {
+    success: boolean,
+    symbols: { [key: string]: string }
+}
+
+export interface CurrencyExchangeApi {
     date: string,
     historical: string,
     info: {

@@ -1,8 +1,8 @@
 import {getAxiosWithConfig} from "./config";
+import {CurrenciesApi, CurrencyExchangeApi} from "./interfaces";
+import {ConvertForm} from "../../Views/Home/interfaces";
 
-//4dnMwNmar0abLMR0qS7ghBzUcN3rBqMl
-
-export const getCurrenciesApi = async (): Promise<any> => {
+export const getCurrenciesApi = async (): Promise<CurrenciesApi> => {
     try {
         const endpoint = 'exchangerates_data/symbols';
         const instance = getAxiosWithConfig();
@@ -14,11 +14,11 @@ export const getCurrenciesApi = async (): Promise<any> => {
     }
 }
 
-export const convertAmount = async (params: any): Promise<any> => {
-    const {startCurrency, endCurrency, amount} = params;
+export const convertAmount = async (params: ConvertForm): Promise<CurrencyExchangeApi> => {
+    const {fromCurrency, toCurrency, amount} = params;
 
     try {
-        const endpoint = `exchangerates_data/convert?to=${endCurrency}&from=${startCurrency}&amount=${amount}`;
+        const endpoint = `exchangerates_data/convert?to=${toCurrency}&from=${fromCurrency}&amount=${amount}`;
         const instance = getAxiosWithConfig();
 
         const {data} = await instance.get(endpoint);

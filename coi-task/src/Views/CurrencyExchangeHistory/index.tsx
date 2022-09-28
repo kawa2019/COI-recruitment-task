@@ -13,6 +13,7 @@ const CurrencyExchangeHistory: React.FC = () => {
             type: CurrencyExchangeHistoryTypes.SET_CURRENCY_EXCHANGE_HISTORY,
             payload: {data: []}
         });
+        localStorage.removeItem('CurrencyExchangeHistory');
     }, [])
 
 

@@ -1,3 +1,7 @@
+# Application for currency exchange
+
+The application is used to exchange currencies and show the history of their exchange in the table
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
